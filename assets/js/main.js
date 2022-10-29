@@ -5,7 +5,7 @@ const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 function convertPokemonHTML(pokemon) {
     return `
     <li class="pokemon-item">
-        <span class="pokemon-number">${pokemon}</span>
+        <span class="pokemon-number">#001</span>
         <span class="pokemon-name">${pokemon.name}</span>
 
         <div class="pokemon-detail">
@@ -15,7 +15,7 @@ function convertPokemonHTML(pokemon) {
             </ol>
 
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-                        alt="${pokemon.name}">
+                alt="${pokemon.name}">
         </div>
     </li>
         `
@@ -23,14 +23,6 @@ function convertPokemonHTML(pokemon) {
 
 const list = document.getElementById('list');
 
-fetch(url)
-    .then((res) => res.json())
-    .then((resBody) => resBody.results)
-    .then((pokemonList) => {
-        for (let i = 0; i < pokemonList.length; i++) {
-            const pokemon = pokemonList[i];
-            list.innerHTML += convertPokemonHTML(pokemon);             
-        }
-    })
-    .catch((error) => console.log(error))
-    .finally(() => console.log('Requisição concluida'))
+pokeApi.getPokemons().then((pokemonList = []) => {   
+    list.innerHTML += pokemonList.map(convertPokemonHTML).join('');
+})
