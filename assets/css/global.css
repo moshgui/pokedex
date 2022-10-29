@@ -30,5 +30,11 @@ section.content {
 
     .pokemon-list {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-     }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .pokemon-list {
+        grid-template-columns: 1fr 1fr;
+    }
 }

@@ -26,7 +26,8 @@ ol.pokemon-list {
 }
 
 .pokemon-list .pokemon-type {  
-    list-style: none;    
+    list-style: none;
+    text-align: center;    
 }
 
 .pokemon-type li {
