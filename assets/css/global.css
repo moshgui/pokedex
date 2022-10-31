@@ -20,6 +20,23 @@ section.content {
     margin-bottom: 1rem;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.pagination button {
+    background-color: #6c79db;
+    border: none;
+    padding: 1rem;
+    color: #fff;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
 @media screen and (min-width: 992px) {
     .content {
         max-width: 922px;
